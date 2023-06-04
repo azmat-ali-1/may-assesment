@@ -23,7 +23,10 @@ console.log(result);
 
    container.append(div);
   });
-  takeOrder(result);
+  //after data fetch ;
+  takeOrder(result).then(orderPrep).then(payOrder).then(thankyouFnc).catch(()=>{
+    alert("something mistake");
+  });
   } catch (error) {
     alert(error);
   }
@@ -93,13 +96,3 @@ function payOrder() {
 function thankyouFnc() {
   alert("thanks you");
 }
-
-
-let prom = Promise.resolve(takeOrder);
-
-prom.then(orderPrep).then(payOrder).then(thankyouFnc).catch(()=>{
-  alert("something mistake");
-})
-prom.catch(()=>{
-  alert("something mistake");
-});
