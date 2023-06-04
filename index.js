@@ -3,7 +3,7 @@
 async function getMenu() {
   try {
     let response  =  await fetch('https://raw.githubusercontent.com/saksham-accio/f2_contest_3/main/food.json');
-  let result =await response.json();
+    let result =await response.json();
 console.log(result);
   let container = document.getElementById("container");
   // console.log(result);
@@ -16,7 +16,7 @@ console.log(result);
     </div>  
     <div class="btn-div">
     <p>${element.name}</p>
-        <button class="btn">
+        <button class="btn">$
           ${element.price}
         </button>
     </div>`
